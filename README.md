@@ -47,13 +47,13 @@ El proyecto tiene como objetivo permitir a los usuarios realizar las siguientes 
 ## Documentación Adicional
 
 - [Estandares y Estructura de Commits](EstándaresEscrituraCommits.md)
-- [Manual de Usuario](Manual de usuario.md)
+- [Manual de Usuario](ManualDeUsuario.md)
 - [Manual de Convenciones de Codificación](ManualDeConvencionesDeCodificacion.md)
 - [Tecnologías y Herramientas Utilizadas](TecnologíasHerramientas.md)
 - [Flujo de Trabajo](Workflow.md)
 
 ## Contribuciones
 
-Las contribuciones son bienvenidas. Por favor, sigue el flujo de trabajo descrito en el archivo [Flujo de Trabajo](docs/Workflow.md) para contribuir a este proyecto.
+Las contribuciones son bienvenidas. Por favor, sigue el flujo de trabajo descrito en el archivo [Flujo de Trabajo](Workflow.md) para contribuir a este proyecto.
 
 ¡Gracias por utilizar Stock Management!
