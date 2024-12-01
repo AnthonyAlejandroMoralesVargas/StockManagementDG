@@ -69,26 +69,26 @@ Una vez que los datos son procesados, la tabla en la sección "My Stock" se llen
 En caso de refrescar los datos de la tabla, clic en el botón Refresh.
 
 ## **Errores Comunes y Soluciones**
-**Error: "Purchase price must be a valid decimal number.":**
+### **Error: "Purchase price must be a valid decimal number.":**
 
 ![image](https://github.com/user-attachments/assets/1b4f0f20-08bc-4408-a29e-93c81fb0af4d)
 
-Causa: El campo de precio no contiene un número válido.
-Solución: Ingresar un número mayor que cero.
+**Causa:** El campo de precio no contiene un número válido.
+**Solución:** Ingresar un número mayor que cero.
 
-**Error: "Fecha inválida":**
+### **Error: "Fecha inválida":**
 
 ![image](https://github.com/user-attachments/assets/5a91be7f-e50c-45bd-a79b-4c7a746c1908)
 
-Causa: La fecha no está en el formato dd/mm/yyyy o es una fecha futura.
-Solución: Revisar el formato de la fecha e ingresa una fecha válida.
+**Causa:** La fecha no está en el formato dd/mm/yyyy o es una fecha futura.
+**Solución:** Revisar el formato de la fecha e ingresa una fecha válida.
 
-**Error: "Purchase price must be a valid decimal number.":**
+### **Error: "Purchase price must be a valid decimal number.":**
 
 ![image](https://github.com/user-attachments/assets/52c9b0d9-8091-4090-a4fa-ca71a4e0cd44)
 
-Causa: El campo de la cantidad no contiene un número válido.
-Solución: Ingresar un número mayor que cero.
+**Causa:** El campo de la cantidad no contiene un número válido.
+**Solución:** Ingresar un número mayor que cero.
 
 
 ## **Cálculo de Valores**
