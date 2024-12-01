@@ -46,11 +46,11 @@ El proyecto tiene como objetivo permitir a los usuarios realizar las siguientes 
 
 ## Documentación Adicional
 
-- [Estandares y Estructura de Commits](docs/EstandaresEstrcuturaCommits.md)
-- [Manual de Usuario](docs/ManualDeUsuario.md)
-- [Manual de Convenciones de Codificación](docs/ManualDeConvencionesDeCodificación.md)
-- [Tecnologías y Herramientas Utilizadas](docs/TecnologíasHerramientas.md)
-- [Flujo de Trabajo](docs/Workflow.md)
+- [Estandares y Estructura de Commits](EstándaresEscrituraCommits.md)
+- [Manual de Usuario](Manual de usuario.md)
+- [Manual de Convenciones de Codificación](ManualDeConvencionesDeCodificacion.md)
+- [Tecnologías y Herramientas Utilizadas](TecnologíasHerramientas.md)
+- [Flujo de Trabajo](Workflow.md)
 
 ## Contribuciones
 
