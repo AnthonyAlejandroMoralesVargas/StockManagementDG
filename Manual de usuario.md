@@ -5,7 +5,7 @@
 2. Consultar precios actuales e históricos utilizando la API de Alpha Vantage.
 3. Calcular ganancias, pérdidas y balances de tu inversión.
 4. Visualizar la información en un panel de control amigable.
-
+ 
 ## **Requisitos del Sistema**
 
 1. Sistema Operativo: Windows, macOS o Linux.
