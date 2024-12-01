@@ -74,6 +74,7 @@ En caso de refrescar los datos de la tabla, clic en el botón Refresh.
 ![image](https://github.com/user-attachments/assets/1b4f0f20-08bc-4408-a29e-93c81fb0af4d)
 
 **Causa:** El campo de precio no contiene un número válido.
+
 **Solución:** Ingresar un número mayor que cero.
 
 ### **Error: "Purchase price must be a valid decimal number.":**
@@ -81,6 +82,7 @@ En caso de refrescar los datos de la tabla, clic en el botón Refresh.
 ![image](https://github.com/user-attachments/assets/52c9b0d9-8091-4090-a4fa-ca71a4e0cd44)
 
 **Causa:** El campo de la cantidad no contiene un número válido.
+
 **Solución:** Ingresar un número mayor que cero.
 
 ### **Error: "Invalid date: Incorrect format. Use dd/MM/yyyy.":**
@@ -88,6 +90,7 @@ En caso de refrescar los datos de la tabla, clic en el botón Refresh.
 ![image](https://github.com/user-attachments/assets/5a91be7f-e50c-45bd-a79b-4c7a746c1908)
 
 **Causa:** La fecha no está en el formato dd/mm/yyyy o es una fecha futura.
+
 **Solución:** Revisar el formato de la fecha e ingresa una fecha válida.
 
 ### **Error: "The year of the date must be greater than or equal to 2000.":**
@@ -95,6 +98,7 @@ En caso de refrescar los datos de la tabla, clic en el botón Refresh.
 ![image](https://github.com/user-attachments/assets/27051c73-8322-467e-b721-2aa0739c7c10)
 
 **Causa:** La fecha ingresada tiene un año anterior a 2000, lo cual no es permitido por el sistema.
+
 **Solución:** Revisar de que el año sea 2000 o posterior.
 
 ### **Error: "The date cannot be later than the current date.":**
@@ -102,6 +106,7 @@ En caso de refrescar los datos de la tabla, clic en el botón Refresh.
 ![image](https://github.com/user-attachments/assets/716ab0d7-564c-45dc-bf87-5ac4939b25e9)
 
 **Causa:** La fecha ingresada es una fecha futura, lo que no está permitido por el sistema.
+
 **Solución:** Verifica que la fecha no sea mayor que la fecha actual.
 
 ## **Cálculo de Valores**
