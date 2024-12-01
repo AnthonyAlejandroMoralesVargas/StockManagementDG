@@ -16,7 +16,8 @@
 ## **Interfaz Principal**
 
 La interfaz de Stock Management se divide en varias secciones principales:
-<img width="763" alt="image" src="https://github.com/user-attachments/assets/dcc26982-3d16-485f-b8ac-69e2593a6f19">
+
+![image](https://github.com/user-attachments/assets/6f838cc5-689b-4223-a611-d7b6d52b2611)
 
 ### **Encabezado**
   - **Título:** "STOCK MANAGER".
