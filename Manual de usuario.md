@@ -16,17 +16,18 @@
 ## **Interfaz Principal**
 
 La interfaz de Stock Management se divide en varias secciones principales:
+<img width="763" alt="image" src="https://github.com/user-attachments/assets/dcc26982-3d16-485f-b8ac-69e2593a6f19">
 
-**Encabezado**
+### **Encabezado**
   - **Título:** "STOCK MANAGER".
-**Formulario de Registro de Acciones**
-**Campos**
+### **Formulario de Registro de Acciones**
+#### **Campos**
   - Symbol: Desplegable para seleccionar el símbolo de la acción (ejemplo: AAPL para Apple).
   - Purchase Price: Campo de texto para ingresar el precio de compra por acción.
   - Quantity: Campo de texto para ingresar la cantidad de acciones adquiridas.
   - Purchase Date: Campo de texto para ingresar la fecha de compra en formato dd/mm/yyyy.
   - Botón Save: Procesa los datos ingresados en el formulario.
-**Sección "My Stock"**
+### **Sección "My Stock"**
 Una tabla que muestra la información de las acciones registradas, con las siguientes columnas:
   - Stock Name: Nombre o símbolo de la acción.
   - Quantity: Cantidad de acciones.
@@ -43,33 +44,56 @@ Una tabla que muestra la información de las acciones registradas, con las sigui
 ## **Registrar una Acción**
 Ingresa los datos en el formulario, de modo que:
 
-Symbol: Símbolo de la acción (ejemplo: MSFT para Microsoft).
-Purchase Price: Precio de compra (ejemplo: 150.25).
-Quantity: Cantidad de acciones (ejemplo: 10).
-Purchase Date: Fecha de compra (ejemplo: 01/01/2023).
-Haz clic en el botón Save.
+![image](https://github.com/user-attachments/assets/27f4fcfd-80d1-4846-992c-5f4388b77f74)
 
-Revisa los resultados en la tabla.
+  - Symbol: Símbolo de la acción (ejemplo: MSFT para Microsoft).
+  - Purchase Price: Precio de compra (ejemplo: 427.67).
+  - Quantity: Cantidad de acciones (ejemplo: 1).
+  - Purchase Date: Fecha de compra (ejemplo: 26/11/2024).
+
+**Acciones Disponibles tras Guardar**
+  - Visualización: Los datos ingresados y calculados se agregan automáticamente a la tabla en la sección "My Stock".
+  - Actualización: refresca la tabla con nuevas acciones o correcciones.
+
+## **Visualización de Resultados**
+Una vez que los datos son procesados, la tabla en la sección "My Stock" se llenará automáticamente con la información de la acción. 
+
+![image](https://github.com/user-attachments/assets/fc0c95ea-cc5e-40b4-bbe2-90a6719e2835)
+
+  - El precio actual de la acción.
+  - Las ganancias o pérdidas calculadas.
+  - El balance total de la inversión.
+
+## **Actualización de la Tabla**
+En caso de refrescar los datos de la tabla, clic en el botón Refresh.
+
+## **Errores Comunes y Soluciones**
+**Error: "Purchase price must be a valid decimal number.":**
+
+![image](https://github.com/user-attachments/assets/1b4f0f20-08bc-4408-a29e-93c81fb0af4d)
+
+Causa: El campo de precio no contiene un número válido.
+Solución: Ingresar un número mayor que cero.
+
+**Error: "Fecha inválida":**
+
+![image](https://github.com/user-attachments/assets/5a91be7f-e50c-45bd-a79b-4c7a746c1908)
+
+Causa: La fecha no está en el formato dd/mm/yyyy o es una fecha futura.
+Solución: Revisar el formato de la fecha e ingresa una fecha válida.
+
+**Error: "Purchase price must be a valid decimal number.":**
+
+![image](https://github.com/user-attachments/assets/52c9b0d9-8091-4090-a4fa-ca71a4e0cd44)
+
+Causa: El campo de la cantidad no contiene un número válido.
+Solución: Ingresar un número mayor que cero.
 
 
+## **Cálculo de Valores**
+El sistema calcula automáticamente:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  - Unit Gain: Ganancia por acción (Current Price - Purchase Price).
+  - Unit Percentage: Porcentaje de ganancia o pérdida ((Unit Gain / Purchase Price) * 100).
+  - Total Balance: Saldo total actual (Current Price × Quantity).
+  - Total Gain: Ganancia o pérdida total (Total Balance - Total Cost).
