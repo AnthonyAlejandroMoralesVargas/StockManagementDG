@@ -7,6 +7,7 @@ package com.company.stockmanagement.ui;
 import com.company.stockmanagement.AlphaVantageAPI;
 import com.company.stockmanagement.StockController;
 import com.company.stockmanagement.StockValue;
+import com.company.stockmanagement.User;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -17,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  * managing stock data. It interacts with the StockController and
  * AlphaVantageAPI to process and update stock information.
  *
- * @author saidl
+ * @author Said
  */
 public class DashboardClient extends javax.swing.JFrame {
 
@@ -26,12 +27,12 @@ public class DashboardClient extends javax.swing.JFrame {
     private AlphaVantageAPI api;
     private DefaultTableModel model;
     private static final String API_KEY = "70QX4UDI1NSM2LKD";
-    /**
-     * Constructor to initialize the dashboard client, set up the controller and
-     * API.
-     */
-    public DashboardClient() {
+    private User user;
+
+
+    public DashboardClient(User usuario) {
         initComponents();
+        this.user = usuario;
         controller = new StockController(this, API_KEY);
         this.api = new AlphaVantageAPI(API_KEY);
 
@@ -49,45 +50,34 @@ public class DashboardClient extends javax.swing.JFrame {
      */
     private String getCurrentDate() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        return dateFormat.format(new Date());  // Obtiene la fecha actual
+        return dateFormat.format(new Date());
     }
 
-    /**
-     * Update the table with the provided stock data.
-     *
-     * @param symbol the stock symbol.
-     * @param quantity the quantity of stock.
-     * @param purchaseDate the purchase date.
-     * @param purchasePrice the purchase price.
-     * @param currentPrice the current stock price.
-     * @param stockValues the calculated stock values.
-     */
+
     public void updateTable(String symbol, int quantity, String purchaseDate, double purchasePrice,
-                             double currentPrice, StockValue stockValues) {
+            double currentPrice, StockValue stockValues) {
 
         String currentDate = getCurrentDate();
         Object[] newRow = new Object[]{
-                symbol,
-                quantity,
-                purchaseDate,
-                purchasePrice,
-                currentDate,
-                currentPrice,
-                stockValues.getUnitGain(),
-                stockValues.getUnitPercentage(),
-                stockValues.getTotalBalance(),
-                stockValues.getTotalGain()
+            symbol,
+            quantity,
+            purchaseDate,
+            purchasePrice,
+            currentDate,
+            currentPrice,
+            stockValues.getUnitGain(),
+            stockValues.getUnitPercentage(),
+            stockValues.getTotalBalance(),
+            stockValues.getTotalGain()
         };
 
-        // Insertar nueva fila o actualizar la existente
         model.insertRow(0, newRow);
 
-        // Actualizar la vista
         jTable1.setModel(model);
         javax.swing.JOptionPane.showMessageDialog(this, "Successfully saved");
     }
-    
-     /**
+
+    /**
      * Show an error message.
      *
      * @param message the error message to display.
@@ -337,7 +327,7 @@ public class DashboardClient extends javax.swing.JFrame {
         String purchaseDateText = txtFPurchaseDate.getText();
 
         // Call the controller to process the stock data
-         controller.handleSave(symbol, purchasePriceText, quantityText, purchaseDateText);
+        controller.handleSave(symbol, purchasePriceText, quantityText, purchaseDateText);
     }//GEN-LAST:event_btnSaveActionActionPerformed
 
     /**
@@ -346,7 +336,7 @@ public class DashboardClient extends javax.swing.JFrame {
      * @param evt the event triggered by the update button.
      */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       StockDataUpdater updater = new StockDataUpdater(model);
+        StockDataUpdater updater = new StockDataUpdater(model);
         updater.processStockData(getCurrentDate(), api);
     }//GEN-LAST:event_jButton1ActionPerformed
 

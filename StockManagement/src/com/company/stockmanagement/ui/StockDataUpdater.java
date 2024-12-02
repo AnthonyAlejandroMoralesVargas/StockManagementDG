@@ -7,8 +7,6 @@ package com.company.stockmanagement.ui;
 import com.company.stockmanagement.AlphaVantageAPI;
 import com.company.stockmanagement.StockController;
 import com.company.stockmanagement.StockValue;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,12 +15,32 @@ import javax.swing.table.DefaultTableModel;
  */
 public class StockDataUpdater {
 
+    // Instance variable to hold the table model
     private final DefaultTableModel model;
 
+    /**
+     * Constructor for StockDataUpdater. Initializes the updater with a
+     * DefaultTableModel to update the stock data in the table.
+     *
+     * @param model the table model for updating stock data.
+     */
     public StockDataUpdater(DefaultTableModel model) {
         this.model = model;
     }
 
+    /**
+     * Updates a row in the stock data table with the given stock values.
+     *
+     * @param rowIndex the index of the row to update.
+     * @param symbol the stock symbol.
+     * @param quantity the quantity of stock.
+     * @param purchaseDate the date the stock was purchased.
+     * @param purchasePrice the purchase price of the stock.
+     * @param currentPrice the current price of the stock.
+     * @param stockValues the calculated stock values (gain, percentage,
+     * balance, etc.).
+     * @param currentDate the current date of calculation.
+     */
     public void updateTableRow(int rowIndex, String symbol, int quantity, String purchaseDate, double purchasePrice, double currentPrice, StockValue stockValues, String currentDate) {
         model.setValueAt(symbol, rowIndex, 0);  // Symbol
         model.setValueAt(quantity, rowIndex, 1);  // Quantity
@@ -36,7 +54,9 @@ public class StockDataUpdater {
         model.setValueAt(stockValues.getTotalGain(), rowIndex, 9);  // Total Gain
     }
 
+
     public void processStockData(String currentDate, AlphaVantageAPI api) {
+        // Iterate through all rows in the table and update each one with stock data
         for (int i = 0; i < model.getRowCount(); i++) {
             String symbol = model.getValueAt(i, 0) != null ? model.getValueAt(i, 0).toString() : "";
             if (symbol.isEmpty()) {
@@ -58,14 +78,21 @@ public class StockDataUpdater {
                 continue;
             }
 
-            // Ya no obtiene el precio, lo pasa desde DashboardClient
+            // Fetch current stock price and calculate stock values
             double currentPrice = api.getCurrentPrice(symbol);
-            StockValue stockValues = StockController.calculateStockValues(purchasePrice, currentPrice, quantity);
+            StockValue stockValues = StockController.calculateStockValues(symbol, purchasePrice, quantity, currentPrice, purchaseDate);
 
+            // Update the table with the calculated values
             updateTableRow(i, symbol, quantity, purchaseDate, purchasePrice, currentPrice, stockValues, currentDate);
         }
     }
 
+    /**
+     * Parses an object to a double. If parsing fails, returns 0.0.
+     *
+     * @param value the value to parse.
+     * @return the parsed double value or 0.0 if parsing fails.
+     */
     private double parseDouble(Object value) {
         try {
             return Double.parseDouble(value.toString());
@@ -74,6 +101,12 @@ public class StockDataUpdater {
         }
     }
 
+    /**
+     * Parses an object to an integer. If parsing fails, returns 0.
+     *
+     * @param value the value to parse.
+     * @return the parsed integer value or 0 if parsing fails.
+     */
     private int parseInt(Object value) {
         try {
             return Integer.parseInt(value.toString());
