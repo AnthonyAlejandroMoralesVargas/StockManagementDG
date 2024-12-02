@@ -21,6 +21,7 @@ Los commits deben seguir el siguiente formato:
     - **fix**: Para corrección de errores.
     - **docs**: Cambios en la documentación.
     - **style**: Cambios en el estilo del código (formato, espacios, etc.), sin modificar la lógica.
+    - **comment**: Inclusión de documentación de código que no afecta la lógica.
     - **refactor**: Refactorización del código (cambios en el código que no afectan su funcionalidad externa).
     - **test**: Añadir o modificar pruebas.
     - **chore**: Otras tareas menores que no afectan la lógica o los tests, como actualizaciones de dependencias.
@@ -64,19 +65,25 @@ Si un commit afecta solo al estilo del código, como la corrección de sangrías
 
     style(frontend): corregir formato de código en los componentes de UI    
 
-### **2.6 Commit para Mejoras de Rendimiento**
+### **2.6 Commit para documentar el código**
+
+Para commits que mejoran la legibilidad y entendimiento del código sin modificar su lógica. Se coloca entre parentesis el nombre de la clase involucrada.
+
+    comment(AlphaVantageAPI): añadir comentarios a los métodos utilizando el formato Javadoc.
+
+### **2.7 Commit para Mejoras de Rendimiento**
 
 Para commits que mejoran el rendimiento de la aplicación, se utilizará el tipo perf.
 
     perf(backend): optimizar consulta de precios de acciones    
 
-### **2.7 Commit para Añadir o Modificar Pruebas**
+### **2.8 Commit para Añadir o Modificar Pruebas**
 
 Si el commit añade nuevas pruebas o modifica las existentes, debe usar el tipo test.
 
     test(api): añadir pruebas para la obtención de precios de acciones  
 
-### **2.8 Commit para Tareas Generales**
+### **2.9 Commit para Tareas Generales**
 
 Las tareas generales que no encajan en ninguna de las categorías anteriores (como actualizaciones de dependencias o cambios en los scripts de construcción) deben utilizar el tipo chore.
 
