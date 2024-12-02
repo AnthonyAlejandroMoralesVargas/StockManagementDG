@@ -8,11 +8,53 @@ import java.util.Date;
  * integers, and dates.
  */
 public class StockValidator {
+    
+    /**
+     * Validates a positive decimal number.
+     *
+     * @param input  the input string to validate.
+     * @param errors the StringBuilder to accumulate error messages.
+     * @return the validated decimal number or -1 if invalid.
+     */
+    public static double validatePositiveDecimal(String input, StringBuilder errors) {
+        try {
+            double number = Double.parseDouble(input);
+            if (number <= 0) {
+                errors.append("Purchase price must be greater than 0.\n");
+                return 0; // o el valor que quieras devolver en caso de error
+            }
+            return number;
+        } catch (NumberFormatException e) {
+            errors.append("Purchase price must be a valid decimal number.\n");
+        }
+        return -1;
+    }
+
+    /**
+     * Validates a positive integer.
+     *
+     * @param input  the input string to validate.
+     * @param errors the StringBuilder to accumulate error messages.
+     * @return the validated integer or -1 if invalid.
+     */
+    public static int validatePositiveInteger(String input, StringBuilder errors) {
+        try {
+            int number = Integer.parseInt(input);
+            if (number <= 0) {
+                errors.append("Quantity must be greater than 0.\n");
+                return 0; // O cualquier valor que tenga sentido devolver en caso de error
+            }
+            return number;
+        } catch (NumberFormatException e) {
+            errors.append("Quantity must be a valid integer number.\n");
+        }
+        return -1;
+    }
 
     /**
      * Validates a date in the format dd/MM/yyyy.
      *
-     * @param input the input date string to validate.
+     * @param input  the input date string to validate.
      * @param errors the StringBuilder to accumulate error messages.
      * @return the validated date in the format dd/MM/yyyy or null if invalid.
      */
