@@ -10,7 +10,7 @@ package com.company.stockmanagement;
 public class StockValue {
 
     /**
-     * Total cost of the stock.
+     * Total cost of the stock. 
      */
     private double totalCost;
 
@@ -165,4 +165,5 @@ public class StockValue {
     public void setTotalGain(double totalGain) {
         this.totalGain = totalGain;
     }
+    
 }
