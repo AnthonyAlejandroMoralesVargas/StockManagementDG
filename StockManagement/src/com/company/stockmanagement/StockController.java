@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  *
- * @author saidl
+ * @author Said
  */
 /**
  * Controller class for managing stock data processing and interactions with the
@@ -23,13 +23,28 @@ public class StockController {
     private AlphaVantageAPI api;
     private User user;
 
-
+    /**
+     * Constructor for StockController.
+     *
+     * @param view the view interface (DashboardClient) to update the UI.
+     * @param apiKey the API key for accessing AlphaVantage API.
+     */
     public StockController(DashboardClient view, String apiKey) {
         this.view = view;
         this.api = new AlphaVantageAPI(apiKey);  // Create API instance with the provided key
         this.user = user;
     }
 
+    /**
+     * Processes stock data and updates the view with calculated stock values.
+     * This method calls the API to get the current stock price, calculates
+     * stock values, and updates the view with the results.
+     *
+     * @param symbol the stock symbol to retrieve data for.
+     * @param purchasePrice the price at which the stock was purchased.
+     * @param quantity the number of stocks purchased.
+     * @param purchaseDate the date the stock was purchased.
+     */
     public void processStockData(String symbol, double purchasePrice, int quantity, String purchaseDate, User usuario) {
         try {
             // Get the current price of the stock using the API
@@ -48,7 +63,15 @@ public class StockController {
         }
     }
 
-
+    /**
+     * Handles the save operation by validating inputs and processing data. This
+     * method validates input fields and processes stock data if valid.
+     *
+     * @param symbol the stock symbol.
+     * @param purchasePriceText the purchase price input as text.
+     * @param quantityText the quantity input as text.
+     * @param purchaseDateText the purchase date input as text.
+     */
     public void handleSave(String symbol, String purchasePriceText, String quantityText, String purchaseDateText, User usuario) {
         // Create a StringBuilder to accumulate errors
         StringBuilder errors = new StringBuilder();
@@ -67,7 +90,19 @@ public class StockController {
         }
     }
 
-
+    /**
+     * Calculates the stock values based on purchase price, current price, and
+     * quantity. This method computes unit gain, unit percentage, total balance,
+     * and total gain based on the given parameters and returns a StockValue
+     * object.
+     *
+     * @param symbol the stock symbol.
+     * @param purchasePrice the price at which the stock was purchased.
+     * @param quantity the number of stocks.
+     * @param currentPrice the current price of the stock.
+     * @param purchaseDate the purchase date.
+     * @return a StockValue object containing the calculated stock values.
+     */
     public static StockValue calculateStockValues(String symbol, double purchasePrice, int quantity, double currentPrice, String purchaseDate) {
         // Calculate the stock values based on purchase and current prices
         double unitGain = currentPrice - purchasePrice;
