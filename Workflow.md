@@ -14,6 +14,8 @@ El objetivo de este documento es especificar el flujo de trabajo para garantizar
 
 - **dev**: Esta es la rama de integración donde se combinan los trabajos en progreso. Los desarrolladores fusionarán sus cambios en esta rama después de haber probado y validado sus funcionalidades en las ramas locales. Aquí se integrarán tanto los cambios de la lógica de negocio como los de la interfaz gráfica.
 
+- **release**: Esta rama se utiliza para preparar una nueva versión del proyecto para producción. Se crea a partir de dev cuando se está listo para hacer un lanzamiento y se utiliza para realizar pruebas finales y correcciones menores antes de fusionarse con main. Las ramas release permiten estabilizar el código y corregir errores detectados sin agregar nuevas funcionalidades.
+
 - **docs**: Esta es la rama donde se encuentra toda la documentación relacionada al proyecto (estándares, manual de usuario, documentación API, historias de usuario, diagramas de diseño, etc.)
 
 ### **1.2 Ramas de Funcionalidades**
@@ -93,3 +95,17 @@ Estas ramas se crean a partir de la rama main en situaciones de emergencia para 
 - El Pull Request solo será fusionado a la rama dev después de recibir la aprobación del miembro responsable de la revisión.
 
 ---
+
+## **4. Gestión de Versiones**
+
+Cuando las funcionalidades y correcciones en la rama dev están completas y listas para ser probadas como parte de una nueva versión:
+
+### **4.1 Creación de la Rama release**
+
+- Crear una nueva rama release a partir de dev con el nombre release/x.x.x (las letras x representan el número de versión).
+- Los errores o cambios encontrados durante esta etapa se deben corregir en la rama release.
+
+### **4.2 Fusión de la Rama release**
+
+- Se fusiona la rama release a main.
+- Se fusiona la rama release de nuevo a dev para asegurar que los cambios realizados en la preparación de la versión estén disponibles para el futuro desarrollo.
