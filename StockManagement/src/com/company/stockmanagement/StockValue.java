@@ -1,168 +1,149 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.company.stockmanagement;
 
-/**
- * Represents the values of a stock, including total cost, current value,
- * gains/losses, percentage of gain/loss, and total balance. Provides methods to
- * access and modify these values.
- *
- * @author Gabriel
- */
 public class StockValue {
 
-    /**
-     * Total cost of the stock.
-     */
-    private double totalCost;
-
-    /**
-     * Current value of the stock.
-     */
-    private double currentValue;
-
-    /**
-     * Gain per unit of the stock.
-     */
+    // Instance variables for storing stock information and calculated values
+    private String symbol;
+    private double purchasePrice;
+    private int quantity;
+    private String purchaseDate;
+    private double currentPrice;
     private double unitGain;
-
-    /**
-     * Percentage gain per unit of the stock.
-     */
     private double unitPercentage;
-
-    /**
-     * Total balance of the stock investment.
-     */
     private double totalBalance;
-
-    /**
-     * Total gain from the stock.
-     */
     private double totalGain;
+    private String currentDate;
 
     /**
-     * Constructor for the StockValue class.
+     * Constructor for StockValue.
+     * Initializes the stock record with the given symbol, purchase price,
+     * quantity, and purchase date.
      *
-     * @param totalCost the total cost of the stock.
-     * @param currentValue the current value of the stock.
-     * @param unitGain the gain per unit of the stock.
-     * @param unitPercentage the percentage gain per unit of the stock.
-     * @param totalBalance the total balance of the stock investment.
-     * @param totalGain the total gain from the stock.
+     * @param symbol the stock symbol.
+     * @param purchasePrice the price at which the stock was purchased.
+     * @param quantity the number of stocks purchased.
+     * @param purchaseDate the date the stock was purchased.
      */
-    public StockValue(double totalCost, double currentValue, double unitGain, double unitPercentage, double totalBalance, double totalGain) {
-        this.totalCost = totalCost;
-        this.currentValue = currentValue;
-        this.unitGain = unitGain;
-        this.unitPercentage = unitPercentage;
-        this.totalBalance = totalBalance;
-        this.totalGain = totalGain;
+    public StockValue(String symbol, double purchasePrice, int quantity, String purchaseDate) {
+        this.symbol = symbol;
+        this.purchasePrice = purchasePrice;
+        this.quantity = quantity;
+        this.purchaseDate = purchaseDate;
+    }
+
+    // Getters for stock information
+
+    /**
+     * Gets the stock symbol.
+     *
+     * @return the stock symbol.
+     */
+    public String getSymbol() {
+        return symbol;
     }
 
     /**
-     * Gets the total cost of the stock.
+     * Gets the purchase price of the stock.
      *
-     * @return the total cost.
+     * @return the purchase price.
      */
-    public double getTotalCost() {
-        return totalCost;
+    public double getPurchasePrice() {
+        return purchasePrice;
     }
 
     /**
-     * Gets the current value of the stock.
+     * Gets the quantity of stocks.
      *
-     * @return the current value.
+     * @return the quantity of stocks.
      */
-    public double getCurrentValue() {
-        return currentValue;
+    public int getQuantity() {
+        return quantity;
     }
 
     /**
-     * Gets the gain per unit of the stock.
+     * Gets the purchase date of the stock.
      *
-     * @return the gain per unit.
+     * @return the purchase date.
+     */
+    public String getPurchaseDate() {
+        return purchaseDate;
+    }
+
+    /**
+     * Gets the current price of the stock.
+     *
+     * @return the current price of the stock.
+     */
+    public double getCurrentPrice() {
+        return currentPrice;
+    }
+
+    /**
+     * Gets the unit gain of the stock.
+     *
+     * @return the unit gain of the stock.
      */
     public double getUnitGain() {
         return unitGain;
     }
 
     /**
-     * Gets the percentage gain per unit of the stock.
+     * Gets the unit percentage of the stock.
      *
-     * @return the percentage gain per unit.
+     * @return the unit percentage of the stock.
      */
     public double getUnitPercentage() {
         return unitPercentage;
     }
 
     /**
-     * Gets the total balance of the stock investment.
+     * Gets the total balance of the stock (current price * quantity).
      *
-     * @return the total balance.
+     * @return the total balance of the stock.
      */
     public double getTotalBalance() {
         return totalBalance;
     }
 
     /**
-     * Gets the total gain from the stock.
+     * Gets the total gain from the stock (total balance - purchase cost).
      *
-     * @return the total gain.
+     * @return the total gain from the stock.
      */
     public double getTotalGain() {
         return totalGain;
     }
 
     /**
-     * Sets the total cost of the stock.
+     * Gets the current date when the stock values were calculated.
      *
-     * @param totalCost the total cost to set.
+     * @return the current date.
      */
-    public void setTotalCost(double totalCost) {
-        this.totalCost = totalCost;
+    public String getCurrentDate(){
+        return currentDate;
     }
 
     /**
-     * Sets the current value of the stock.
+     * Sets the calculated stock values such as current price, unit gain, unit
+     * percentage, total balance, total gain, and current date.
      *
-     * @param currentValue the current value to set.
+     * @param currentPrice the current price of the stock.
+     * @param unitGain the gain per unit of stock.
+     * @param unitPercentage the gain percentage per unit.
+     * @param totalBalance the total balance of the stock.
+     * @param totalGain the total gain from the stock.
+     * @param currentDate the current date when the values were calculated.
      */
-    public void setCurrentValue(double currentValue) {
-        this.currentValue = currentValue;
-    }
-
-    /**
-     * Sets the gain per unit of the stock.
-     *
-     * @param unitGain the gain per unit to set.
-     */
-    public void setUnitGain(double unitGain) {
+    public void setCalculatedValues(double currentPrice, double unitGain, double unitPercentage, double totalBalance, double totalGain, String currentDate) {
+        this.currentPrice = currentPrice;
         this.unitGain = unitGain;
-    }
-
-    /**
-     * Sets the percentage gain per unit of the stock.
-     *
-     * @param unitPercentage the percentage gain per unit to set.
-     */
-    public void setUnitPercentage(double unitPercentage) {
         this.unitPercentage = unitPercentage;
-    }
-
-    /**
-     * Sets the total balance of the stock investment.
-     *
-     * @param totalBalance the total balance to set.
-     */
-    public void setTotalBalance(double totalBalance) {
         this.totalBalance = totalBalance;
-    }
-
-    /**
-     * Sets the total gain from the stock.
-     *
-     * @param totalGain the total gain to set.
-     */
-    public void setTotalGain(double totalGain) {
         this.totalGain = totalGain;
+        this.currentDate = currentDate;
     }
 }
