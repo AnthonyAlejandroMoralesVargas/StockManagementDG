@@ -7,8 +7,6 @@ package com.company.stockmanagement.ui;
 import com.company.stockmanagement.AlphaVantageAPI;
 import com.company.stockmanagement.StockController;
 import com.company.stockmanagement.StockValue;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,11 +15,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class StockDataUpdater {
 
+    // Instance variable to hold the table model
     private final DefaultTableModel model;
+
 
     public StockDataUpdater(DefaultTableModel model) {
         this.model = model;
     }
+
 
     public void updateTableRow(int rowIndex, String symbol, int quantity, String purchaseDate, double purchasePrice, double currentPrice, StockValue stockValues, String currentDate) {
         model.setValueAt(symbol, rowIndex, 0);  // Symbol
@@ -36,7 +37,9 @@ public class StockDataUpdater {
         model.setValueAt(stockValues.getTotalGain(), rowIndex, 9);  // Total Gain
     }
 
+
     public void processStockData(String currentDate, AlphaVantageAPI api) {
+        // Iterate through all rows in the table and update each one with stock data
         for (int i = 0; i < model.getRowCount(); i++) {
             String symbol = model.getValueAt(i, 0) != null ? model.getValueAt(i, 0).toString() : "";
             if (symbol.isEmpty()) {
@@ -58,13 +61,15 @@ public class StockDataUpdater {
                 continue;
             }
 
-            // Ya no obtiene el precio, lo pasa desde DashboardClient
+            // Fetch current stock price and calculate stock values
             double currentPrice = api.getCurrentPrice(symbol);
-            StockValue stockValues = StockController.calculateStockValues(purchasePrice, currentPrice, quantity);
+            StockValue stockValues = StockController.calculateStockValues(symbol, purchasePrice, quantity, currentPrice, purchaseDate);
 
+            // Update the table with the calculated values
             updateTableRow(i, symbol, quantity, purchaseDate, purchasePrice, currentPrice, stockValues, currentDate);
         }
     }
+
 
     private double parseDouble(Object value) {
         try {
@@ -73,6 +78,7 @@ public class StockDataUpdater {
             return 0.0;
         }
     }
+
 
     private int parseInt(Object value) {
         try {
