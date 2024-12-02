@@ -7,18 +7,35 @@ import java.net.URL;
 import org.json.JSONObject;
 
 /**
+ * Class to interact with the Alpha Vantage API. This class provides methods to
+ * fetch the current stock price and historical stock price based on a given
+ * date.
+ *
+ * It connects to the Alpha Vantage API and handles JSON responses to extract
+ * relevant stock price data.
+ * 
  * @author Anthony
  */
 public class AlphaVantageAPI {
-
+    // Base URL for the Alpha Vantage API
     private static final String API_URL = "https://www.alphavantage.co/query";
     private String apiKey;
-
+    
+    /**
+     * Constructor for the AlphaVantageApi class.
+     *
+     * @param apiKey the API key for authenticating requests to Alpha Vantage.
+     */
     public AlphaVantageAPI(String apiKey) {
         this.apiKey = apiKey;
     }
 
-   
+   /**
+     * Fetches the current stock price using the Alpha Vantage API.
+     *
+     * @param symbol the stock symbol (e.g., "AAPL" for Apple).
+     * @return the current stock price, or -1 if an error occurs.
+     */
     public double getCurrentPrice(String symbol) {
         String urlString = API_URL + "?function=TIME_SERIES_INTRADAY&symbol=" + symbol + "&interval=1min&apikey=" + apiKey;
         try {
