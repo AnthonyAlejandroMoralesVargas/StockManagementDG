@@ -27,7 +27,10 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="panelHeader" max="32767" attributes="0"/>
-          <Component id="actionInfo" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="actionInfo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -35,7 +38,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="panelHeader" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="actionInfo" min="-2" max="-2" attributes="0"/>
+              <Component id="actionInfo" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -92,7 +95,11 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jScrollPane1" min="-2" pref="1130" max="-2" attributes="0"/>
+                          <EmptySpace pref="44" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btnSaveAction" min="-2" pref="81" max="-2" attributes="0"/>
                               <Component id="txtRegister" min="-2" max="-2" attributes="0"/>
@@ -125,19 +132,14 @@
                                       </Group>
                                   </Group>
                               </Group>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="785" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane1" min="-2" pref="927" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="829" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -307,8 +309,8 @@
                     <Column editable="true" title="Purchase Price" type="java.lang.Double"/>
                     <Column editable="true" title="Current Date" type="java.lang.Object"/>
                     <Column editable="true" title="Current Price" type="java.lang.Double"/>
-                    <Column editable="true" title="Unit Gain" type="java.lang.Double"/>
-                    <Column editable="true" title="Unit Percentage" type="java.lang.Double"/>
+                    <Column editable="true" title="Unit Gain (USD)" type="java.lang.Double"/>
+                    <Column editable="true" title="Unit Percentage (%)" type="java.lang.Double"/>
                     <Column editable="true" title="Total Balance" type="java.lang.Double"/>
                     <Column editable="true" title="Total Gain" type="java.lang.Double"/>
                   </Table>
