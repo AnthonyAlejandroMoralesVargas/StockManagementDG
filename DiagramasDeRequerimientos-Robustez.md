@@ -10,12 +10,12 @@ En esta sección se presentan los diagramas de robustez correspondientes al proy
 
 ## Diagrama de Robustez 1
 
-![Diagrama de Robustez 1](ImagenesDiagramas/DiagramaDeRobustez1-StockManagement.png)
+![Diagrama de Robustez 1](ImagenesDiagramas/DiagramaRobustez1.jpg)
 
 ## Diagrama de Robustez 2
 
-![Diagrama de Robustez 2](ImagenesDiagramas/DiagramaDeRobustez2-StockManagement.png)
+![Diagrama de Robustez 2](ImagenesDiagramas/DiagramaRobustez2.jpg)
 
 ## Diagrama de Robustez 3
 
-![Diagrama de Robustez 3](ImagenesDiagramas/DiagramaDeRobustez3-StockManagement.png)
+![Diagrama de Robustez 3](ImagenesDiagramas/DiagramaRobustez3.jpg)
