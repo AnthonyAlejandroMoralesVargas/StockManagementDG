@@ -39,12 +39,7 @@ public class DashboardClient extends javax.swing.JFrame {
         this.user = usuario;
         controller = new StockController(this, API_KEY);
         this.api = new AlphaVantageAPI(API_KEY);
-        
-        // Initialize the table with an empty row to prevent NullPointerException
         model = (DefaultTableModel) jTable1.getModel();
-        model.insertRow(0, new Object[]{"AMZN", 1, "26/11/2024", 207.82, getCurrentDate(), 205.79, 5.79, 2.895, 207.86, 7.86});
-        model.insertRow(1, new Object[]{"AAPL", 1, "26/11/2024", 235.10, getCurrentDate(), 234.80, 7.86, 3.93, 207.86, 7.86});
-        model.insertRow(2, new Object[]{"MSFT", 1, "26/11/2024", 427.67, getCurrentDate(), 422.91, 7.86, 3.93, 207.86, 7.86});
     }
     
     /**
@@ -209,7 +204,7 @@ public class DashboardClient extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Stock Name", "Quantity", "Purchase Date", "Purchase Price", "Current Date", "Current Price", "Unit Gain", "Unit Percentage", "Total Balance", "Total Gain"
+                "Stock Name", "Quantity", "Purchase Date", "Purchase Price", "Current Date", "Current Price", "Unit Gain (USD)", "Unit Percentage (%)", "Total Balance", "Total Gain"
             }
         ) {
             Class[] types = new Class [] {
@@ -237,6 +232,9 @@ public class DashboardClient extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(actionInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(actionInfoLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(44, Short.MAX_VALUE))
+                    .addGroup(actionInfoLayout.createSequentialGroup()
                         .addGroup(actionInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnSaveAction, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtRegister)
@@ -260,16 +258,13 @@ public class DashboardClient extends javax.swing.JFrame {
                                             .addGap(48, 48, 48)))
                                     .addGroup(actionInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtFQuantity)
-                                        .addComponent(txtFPurchaseDate, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(actionInfoLayout.createSequentialGroup()
-                        .addGroup(actionInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(txtFPurchaseDate, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))))
                             .addGroup(actionInfoLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addGap(785, 785, 785)
-                                .addComponent(jButton1))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 927, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 44, Short.MAX_VALUE))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(829, 829, 829)
+                        .addComponent(jButton1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         actionInfoLayout.setVerticalGroup(
             actionInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,14 +305,16 @@ public class DashboardClient extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(actionInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(actionInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(actionInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(actionInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
