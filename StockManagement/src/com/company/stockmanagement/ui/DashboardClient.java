@@ -39,12 +39,7 @@ public class DashboardClient extends javax.swing.JFrame {
         this.user = usuario;
         controller = new StockController(this, API_KEY);
         this.api = new AlphaVantageAPI(API_KEY);
-        
-        // Initialize the table with an empty row to prevent NullPointerException
         model = (DefaultTableModel) jTable1.getModel();
-        model.insertRow(0, new Object[]{"AMZN", 1, "26/11/2024", 207.82, getCurrentDate(), 205.79, 5.79, 2.895, 207.86, 7.86});
-        model.insertRow(1, new Object[]{"AAPL", 1, "26/11/2024", 235.10, getCurrentDate(), 234.80, 7.86, 3.93, 207.86, 7.86});
-        model.insertRow(2, new Object[]{"MSFT", 1, "26/11/2024", 427.67, getCurrentDate(), 422.91, 7.86, 3.93, 207.86, 7.86});
     }
     
     /**
